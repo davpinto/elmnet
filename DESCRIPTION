@@ -1,0 +1,16 @@
+Package: elmnet
+Type: Package
+Title: Fast Regularized and Pruned Extreme Learning Machines
+Version: 0.1.0
+Date: 2016-08-13
+Description: Nonlinear regression and classification with regularized and pruned Extreme Learning Machines.
+Authors@R: person("David", "Pinto", email = "davidengaut@gmail.com",
+                  role = c("aut", "cre"))
+URL: https://github.com/davidnexer/elmnet
+BugReports: https://github.com/davidnexer/elmnet/issues
+License: MIT
+LazyData: TRUE
+Depends: R (>= 3.2.2), ggplot2 (>= 2.1.0), foreach (>= 1.4.3)
+Imports: magrittr (>= 1.5),
+    matrixStats (>= 0.14.0)
+Suggests: caTools (>= 1.17.1)

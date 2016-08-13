@@ -1,0 +1,9 @@
+*.Rbuildignore
+*.Rproj
+*.Rproj.user
+*.Rhistory
+*.RData
+*.Ruserdata
+*.svg
+.Rproj.user
+test_script.R
