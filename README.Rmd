@@ -4,19 +4,31 @@ subtitle: "Fast Regularized and Pruned ELMs"
 output: github_document
 ---
 
-> Nonlinear Regression and Classification with Regularized and Pruned
-Extreme Learning Machines
-
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, dpi = 120, fig.align = "center")
+knitr::opts_chunk$set(echo = TRUE, dpi = 120, fig.align = "center", fig.width=5, fig.height=3)
 ```
 
-## How To Install?
+> Nonlinear Regression and Classification with Regularized and Pruned Extreme Learning Machines
+
+***This is a BETA release and works only for classification problems for now.***
+
+The `elmnet` function implements a tuning free regularized learner based on Extreme Learning Machines (ELMs). It uses **Generalized Cross Validation** (GCV), a fast and efficient leave-one-out approach, to automatically define the best regularization parameter.
+
+So, `elmnet` is a fast and easy to use nonlinear learner. Moreover, it uses a **softmax** function on the output layer to predict **calibrated probabilities**.
+
+### How To Install?
 
 ```{r, eval=FALSE}
 library('devtools')
 install_github(repo = "davidnexer/elmnet")
 ```
+
+### Required Packages
+
+* `magrittr` to use the pipe operator `%>%`,
+* `matrixStats` for fast row-wise and column-wise matrix operations,
+* `doSnow` to train multiclass models in parallel. The `elmnet` package uses **all available cores** by default,
+* `ggplot2` to plot classification decision boundaries.
 
 ## Regularization Methods
 
@@ -42,7 +54,7 @@ library('caTools')
 
 ### Two-class example
 
-```{r, fig.width=5, fig.height=3}
+```{r}
 # Load toy data
 data('spirals', package = 'elmnet')
 x <- spirals$x
@@ -64,7 +76,7 @@ elmDecisionBound(elm.model, x.te, y.te, resamp = 150)
 
 ### Multi-class example
 
-```{r, fig.width=5, fig.height=3}
+```{r}
 # Load toy data
 data('multi_spirals', package = 'elmnet')
 x <- multi_spirals$x

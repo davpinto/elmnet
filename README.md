@@ -3,13 +3,25 @@
 
 > Nonlinear Regression and Classification with Regularized and Pruned Extreme Learning Machines
 
-How To Install?
----------------
+***This is a BETA release and works only for classification problems for now.***
+
+The `elmnet` function implements a tuning free regularized learner based on Extreme Learning Machines (ELMs). It uses **Generalized Cross Validation** (GCV), a fast and efficient leave-one-out approach, to automatically define the best regularization parameter.
+
+So, `elmnet` is a fast and easy to use nonlinear learner. Moreover, it uses a **softmax** function on the output layer to predict **calibrated probabilities**.
+
+### How To Install?
 
 ``` r
 library('devtools')
 install_github(repo = "davidnexer/elmnet")
 ```
+
+### Required Packages
+
+-   `magrittr` to use the pipe operator `%>%`,
+-   `matrixStats` for fast row-wise and column-wise matrix operations,
+-   `doSnow` to train multiclass models in parallel. The `elmnet` package uses **all available cores** by default,
+-   `ggplot2` to plot classification decision boundaries.
 
 Regularization Methods
 ----------------------
