@@ -5,7 +5,7 @@
 
 ***This is a BETA release and for now it works only for classification problems.***
 
-The `elmnet` function implements a tuning free regularized learner based on Extreme Learning Machines (ELMs) (Huang, Wang, and Lan 2011). It uses **Generalized Cross Validation** (GCV), a fast and efficient leave-one-out approach, to automatically define the best regularization parameter.
+The `elmnet` function implements a tuning free regularized learner based on Extreme Learning Machines (ELMs) (Huang, Wang, and Lan 2011). It uses **Generalized Cross Validation** (GCV) (Golub, Heath, and Wahba 1979), a fast and efficient leave-one-out approach, to automatically define the best regularization parameter.
 
 So, `elmnet` is a fast and easy to use nonlinear learner. Moreover, it uses a **softmax** function on the output layer to predict **calibrated probabilities**.
 
@@ -18,7 +18,7 @@ install_github(repo = "davpinto/elmnet")
 
 ### Required Packages
 
-The following packages are required to make `emlnet` work properly. All of them will be automatically instaled when you install `elmnet`.
+The following packages are required to make `elmnet` work properly. All of them will be automatically instaled when you install `elmnet`.
 
 -   `magrittr` to use the pipe operator `%>%`,
 -   `matrixStats` for fast row-wise and column-wise matrix operations,
@@ -28,8 +28,8 @@ The following packages are required to make `emlnet` work properly. All of them 
 Regularization Methods
 ----------------------
 
--   Lasso (*in development*)
 -   Ridge Regression
+-   Lasso (*in development*)
 -   Elastic-net (*in development*)
 
 Pruning Methods
@@ -106,6 +106,8 @@ elmDecisionBound(elm.model, x.te, y.te, resamp = 150)
 
 References
 ==========
+
+Golub, Gene H, Michael Heath, and Grace Wahba. 1979. “Generalized Cross-Validation as a Method for Choosing a Good Ridge Parameter.” *Technometrics* 21 (2). Taylor & Francis: 215–23.
 
 Huang, Guang-Bin, Dian Hui Wang, and Yuan Lan. 2011. “Extreme Learning Machines: A Survey.” *International Journal of Machine Learning and Cybernetics* 2 (2). Springer: 107–22.
 

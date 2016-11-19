@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE, dpi = 120, fig.align = "center", fig.width=5,
 
 ***This is a BETA release and for now it works only for classification problems.***
 
-The `elmnet` function implements a tuning free regularized learner based on Extreme Learning Machines (ELMs) [@huang-2011]. It uses **Generalized Cross Validation** (GCV), a fast and efficient leave-one-out approach, to automatically define the best regularization parameter.
+The `elmnet` function implements a tuning free regularized learner based on Extreme Learning Machines (ELMs) [@huang-2011]. It uses **Generalized Cross Validation** (GCV) [@golub-1979], a fast and efficient leave-one-out approach, to automatically define the best regularization parameter.
 
 So, `elmnet` is a fast and easy to use nonlinear learner. Moreover, it uses a **softmax** function on the output layer to predict **calibrated probabilities**.
 
@@ -26,7 +26,7 @@ install_github(repo = "davpinto/elmnet")
 
 ### Required Packages
 
-The following packages are required to make `emlnet` work properly. All of them will be automatically instaled when you install `elmnet`.
+The following packages are required to make `elmnet` work properly. All of them will be automatically instaled when you install `elmnet`.
 
 * `magrittr` to use the pipe operator `%>%`,
 * `matrixStats` for fast row-wise and column-wise matrix operations,
@@ -35,8 +35,8 @@ The following packages are required to make `emlnet` work properly. All of them 
 
 ## Regularization Methods
 
-* Lasso (*in development*)
 * Ridge Regression
+* Lasso (*in development*)
 * Elastic-net (*in development*)
 
 ## Pruning Methods
