@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE, dpi = 120, fig.align = "center", fig.width=5,
 
 ***This is a BETA release and for now it works only for classification problems.***
 
-The `elmnet` function implements a tuning free regularized learner based on Extreme Learning Machines (ELMs). It uses **Generalized Cross Validation** (GCV), a fast and efficient leave-one-out approach, to automatically define the best regularization parameter.
+The `elmnet` function implements a tuning free regularized learner based on Extreme Learning Machines (ELMs) [@huang-2011]. It uses **Generalized Cross Validation** (GCV), a fast and efficient leave-one-out approach, to automatically define the best regularization parameter.
 
 So, `elmnet` is a fast and easy to use nonlinear learner. Moreover, it uses a **softmax** function on the output layer to predict **calibrated probabilities**.
 
@@ -21,14 +21,16 @@ So, `elmnet` is a fast and easy to use nonlinear learner. Moreover, it uses a **
 
 ```{r, eval=FALSE}
 library('devtools')
-install_github(repo = "davidnexer/elmnet")
+install_github(repo = "davpinto/elmnet")
 ```
 
 ### Required Packages
 
+The following packages are required to make `emlnet` work properly. All of them will be automatically instaled when you install `elmnet`.
+
 * `magrittr` to use the pipe operator `%>%`,
 * `matrixStats` for fast row-wise and column-wise matrix operations,
-* `doSnow` to train multiclass models in parallel. The `elmnet` package uses **all available cores** by default,
+* `doSNOW` and `foreach` to train multiclass models in parallel. The `elmnet` package uses **all available cores** by default,
 * `ggplot2` to plot classification decision boundaries.
 
 ## Regularization Methods
@@ -62,6 +64,7 @@ x <- spirals$x
 y <- spirals$y
 
 # Split data
+set.seed(111)
 tr.idx <- caTools::sample.split(y, SplitRatio = 0.7)
 x.tr <- x[tr.idx,]
 x.te <- x[!tr.idx,]
@@ -69,6 +72,7 @@ y.tr <- y[tr.idx]
 y.te <- y[!tr.idx]
 
 # Fit ELM model
+set.seed(111)
 elm.model <- elmnet(x.tr, y.tr, nodes = 300, standardize = TRUE)
 
 # Draw classification decision boudary
@@ -84,6 +88,7 @@ x <- multi_spirals$x
 y <- multi_spirals$y
 
 # Split data
+set.seed(222)
 tr.idx <- caTools::sample.split(y, SplitRatio = 0.7)
 x.tr <- x[tr.idx,]
 x.te <- x[!tr.idx,]
@@ -91,6 +96,7 @@ y.tr <- y[tr.idx]
 y.te <- y[!tr.idx]
 
 # Fit ELM model
+set.seed(222)
 elm.model <- elmnet(x.tr, y.tr, nodes = 300, standardize = TRUE)
 
 # Draw classification decision boudary

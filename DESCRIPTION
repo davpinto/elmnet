@@ -12,5 +12,6 @@ License: MIT
 LazyData: TRUE
 Depends: R (>= 3.2.2), ggplot2 (>= 2.1.0), foreach (>= 1.4.3)
 Imports: magrittr (>= 1.5),
-    matrixStats (>= 0.14.0)
+    matrixStats (>= 0.14.0),
+    doSNOW (>= 1.0.14)
 Suggests: caTools (>= 1.17.1)
