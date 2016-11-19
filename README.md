@@ -3,7 +3,7 @@
 
 > Nonlinear Regression and Classification with Regularized and Pruned Extreme Learning Machines
 
-***This is a BETA release and works only for classification problems for now.***
+***This is a BETA release and for now it works only for classification problems.***
 
 The `elmnet` function implements a tuning free regularized learner based on Extreme Learning Machines (ELMs). It uses **Generalized Cross Validation** (GCV), a fast and efficient leave-one-out approach, to automatically define the best regularization parameter.
 
@@ -33,9 +33,9 @@ Regularization Methods
 Pruning Methods
 ---------------
 
--   Fast Pruned ELM (P-ELM) \[1\] (*in development*)
--   Optimally Pruned ELM (OP-ELM) \[2\] (*in development*)
--   Double-Regularized ELM (TROP-ELM) \[3\] (*in development*)
+-   Fast Pruned ELM (P-ELM) (Rong et al. 2008) (*in development*)
+-   Optimally Pruned ELM (OP-ELM) (Miche et al. 2010) (*in development*)
+-   Double-Regularized ELM (TROP-ELM) (Miche et al. 2011) (*in development*)
 
 Toy Examples
 ------------
@@ -98,10 +98,11 @@ elmDecisionBound(elm.model, x.te, y.te, resamp = 150)
 
 ------------------------------------------------------------------------
 
-### References
+References
+==========
 
-\[1\] Rong, Hai-Jun, Yew-Soon Ong, Ah-Hwee Tan, and Zexuan Zhu. "A fast pruned-extreme learning machine for classification problem." Neurocomputing 72, no. 1 (2008): 359-366.
+Miche, Yoan, Antti Sorjamaa, Patrick Bas, Olli Simula, Christian Jutten, and Amaury Lendasse. 2010. “OP-ELM: Optimally Pruned Extreme Learning Machine.” *IEEE Transactions on Neural Networks* 21 (1). IEEE: 158–62.
 
-\[2\] Miche, Yoan, Antti Sorjamaa, Patrick Bas, Olli Simula, Christian Jutten, and Amaury Lendasse. "OP-ELM: optimally pruned extreme learning machine." Neural Networks, IEEE Transactions on 21, no. 1 (2010): 158-162.
+Miche, Yoan, Mark Van Heeswijk, Patrick Bas, Olli Simula, and Amaury Lendasse. 2011. “TROP-ELM: A Double-Regularized ELM Using LARS and Tikhonov Regularization.” *Neurocomputing* 74 (16). Elsevier: 2413–21.
 
-\[3\] Miche, Yoan, Mark Van Heeswijk, Patrick Bas, Olli Simula, and Amaury Lendasse. "TROP-ELM: a double-regularized ELM using LARS and Tikhonov regularization." Neurocomputing 74, no. 16 (2011): 2413-2421.
+Rong, Hai-Jun, Yew-Soon Ong, Ah-Hwee Tan, and Zexuan Zhu. 2008. “A Fast Pruned-Extreme Learning Machine for Classification Problem.” *Neurocomputing* 72 (1). Elsevier: 359–66.

@@ -2,6 +2,7 @@
 title: "![elmnet R package](elmnet_logo.png)"
 subtitle: "Fast Regularized and Pruned ELMs"
 output: github_document
+bibliography: references.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -10,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE, dpi = 120, fig.align = "center", fig.width=5,
 
 > Nonlinear Regression and Classification with Regularized and Pruned Extreme Learning Machines
 
-***This is a BETA release and works only for classification problems for now.***
+***This is a BETA release and for now it works only for classification problems.***
 
 The `elmnet` function implements a tuning free regularized learner based on Extreme Learning Machines (ELMs). It uses **Generalized Cross Validation** (GCV), a fast and efficient leave-one-out approach, to automatically define the best regularization parameter.
 
@@ -38,9 +39,9 @@ install_github(repo = "davidnexer/elmnet")
 
 ## Pruning Methods
 
-* Fast Pruned ELM (P-ELM) [1] (*in development*)
-* Optimally Pruned ELM (OP-ELM) [2] (*in development*)
-* Double-Regularized ELM (TROP-ELM) [3] (*in development*)
+* Fast Pruned ELM (P-ELM) [@rong-2008] (*in development*)
+* Optimally Pruned ELM (OP-ELM) [@miche-2010] (*in development*)
+* Double-Regularized ELM (TROP-ELM) [@miche-2011] (*in development*)
 
 ## Toy Examples
 
@@ -96,12 +97,6 @@ elm.model <- elmnet(x.tr, y.tr, nodes = 300, standardize = TRUE)
 elmDecisionBound(elm.model, x.te, y.te, resamp = 150)
 ```
 
-------
+******
 
-### References
-
-[1] Rong, Hai-Jun, Yew-Soon Ong, Ah-Hwee Tan, and Zexuan Zhu. "A fast pruned-extreme learning machine for classification problem." Neurocomputing 72, no. 1 (2008): 359-366.
-
-[2] Miche, Yoan, Antti Sorjamaa, Patrick Bas, Olli Simula, Christian Jutten, and Amaury Lendasse. "OP-ELM: optimally pruned extreme learning machine." Neural Networks, IEEE Transactions on 21, no. 1 (2010): 158-162.
-
-[3] Miche, Yoan, Mark Van Heeswijk, Patrick Bas, Olli Simula, and Amaury Lendasse. "TROP-ELM: a double-regularized ELM using LARS and Tikhonov regularization." Neurocomputing 74, no. 16 (2011): 2413-2421.
+# References
